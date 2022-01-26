@@ -1,11 +1,13 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-data = pd.read_csv('data.csv')
-plt.rcParams["figure.figsize"] = [7.50, 3.50]
-plt.rcParams["figure.autolayout"] = True
-xs = np.random.rand(100)
-ys = np.random.rand(100)
-for x, y in zip(xs, ys):
-   plt.scatter(x, y, cmap="copper")
+data = pd.read_csv('ScoreData.csv')
+
+x = [1,2,3,4,5,6,7,8,9,10]
+y = [50,48,45,40,35,30,20,15,14,11]
+fig, ax = plt.subplots(figsize=(10, 5))
+ax.scatter(x, y)
+ax.set(title = "Scatter Plot Example",
+       xlabel = "Employees",
+       ylabel = "Profits per employee")
 plt.show()

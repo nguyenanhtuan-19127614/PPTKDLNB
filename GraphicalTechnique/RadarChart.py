@@ -4,7 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # read dataset from csv and perform preprocessing
-data = pd.read_csv('data.csv')
+data = pd.read_csv('ScoreData.csv')
 
 categories = ['SE','AI','OOP','MSA',
             'OS','DHMT','XLAV','VLDC2']
