@@ -1,7 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
-data = pd.read_csv('ScoreData.csv')
 
 x = [1,2,3,4,5,6,7,8,9,10]
 y = [50,48,45,40,35,30,20,15,14,11]
