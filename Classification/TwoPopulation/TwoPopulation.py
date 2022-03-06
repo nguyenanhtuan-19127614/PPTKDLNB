@@ -55,15 +55,16 @@ plt.plot(X_2[:,0], X_2[:,1], "o", color="red",label="Canadian")
 plt.legend()
 plt.show()
 
-temp_1=a.dot(X_1.T).reshape(-1,1)
-temp_2=a.dot(X_2.T).reshape(-1,1)
+#Tính y của X_1 và X_2
+y_1=a.dot(X_1.T).reshape(-1,1)
+y_2=a.dot(X_2.T).reshape(-1,1)
 
-plt.plot(temp_1,"o",color="blue",label="Alask")
-plt.plot(temp_2,"o",color="red",label="Canadian")
+plt.plot(y_1,"o",color="blue",label="Alask")
+plt.plot(y_2,"o",color="red",label="Canadian")
 xx = np.arange(-2, 50, 0.1).reshape(-1, 1)
 
-y=m+xx*0
+m_new=m+xx*0 #m_new vẫn là m nhưng nhân với xx để tạo array vẽ cho dễ
 
-plt.plot(xx,y,color="black")
+plt.plot(xx,m_new,color="black")
 plt.legend()
 plt.show()
