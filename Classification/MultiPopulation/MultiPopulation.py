@@ -22,6 +22,7 @@ X_3=X_3[~np.isnan(X_3).any(axis=1)]
 n_1=X_1.shape[0]
 n_2=X_2.shape[0]
 n_3=X_3.shape[0]
+
 p_1=X_1.shape[1]
 p_2=X_2.shape[1]
 p_3=X_3.shape[1]
