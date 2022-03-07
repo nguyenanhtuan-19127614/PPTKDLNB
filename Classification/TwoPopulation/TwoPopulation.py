@@ -29,21 +29,20 @@ a=(mean_X_1-mean_X_2).T.dot(S_pooled_inv)
 #Tính m mũ
 m=0.5*a.dot(mean_X_1-mean_X_2)
 
-def classification_X(X,a,m):
+def classification(X,a,m):
     class_id=[]
     for i in X:
-        print(a.dot(i.T))
         if a.dot(i.T) >= m:
             class_id.append("Alask")
         else:
             class_id.append("Canadian")
     return np.array(class_id)
-
+#Test model
 data_test=pandas.read_csv("Test.csv")
 X_test=np.vstack((data_test["Freshwater"],data_test["Marine"])).T
 y_test=data_test["Label"]
 
-y_predict= classification_X (X_test,a,m)
+y_predict= classification (X_test,a,m)
 print(y_predict)
 accuracy_score_test= accuracy_score(y_predict,y_test)
 print("accuracy score test: ",accuracy_score_test*100)
