@@ -82,6 +82,7 @@ plt.show()
 #Tính y của class_Alask và class_Canadian
 y_Alask=a.dot(class_Alask.T).reshape(-1,1)
 y_Canadian=a.dot(class_Canadian.T).reshape(-1,1)
+
 plt.plot(y_Alask,"o",color="blue",label="Alask")
 plt.plot(y_Canadian,"o",color="red",label="Canadian")
 xx = np.arange(-2, 50, 0.1).reshape(-1, 1)
