@@ -94,9 +94,9 @@ plt.show()
 class_1=X_test[y_test=="apple"]
 class_2=X_test[y_test=="orange"]
 class_3=X_test[y_test=="lemon"]
-plt.plot(class_1[:,0], class_1[:,1], "o",label="class 1")
-plt.plot(class_2[:,0], class_2[:,1], "o",label="class 2")
-plt.plot(class_3[:,0], class_3[:,1], "o",label="class 3")
-plt.title("Test")
+plt.plot(class_1[:,0], class_1[:,1], "o",color="red",label="Apple")
+plt.plot(class_2[:,0], class_2[:,1], "o",color="orange",label="Orange")
+plt.plot(class_3[:,0], class_3[:,1], "o",color="yellow",label="Lemon")
+plt.title("Fruit")
 plt.legend()
 plt.show()
