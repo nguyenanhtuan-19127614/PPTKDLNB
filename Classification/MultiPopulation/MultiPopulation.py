@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
 from sklearn.metrics import accuracy_score
 import pandas
 #Data: https://github.com/rocksaint/fruit-data-with-colours
@@ -65,6 +66,7 @@ def classification(X,priori_prob,a,mean): # Phân lớp dựa trên d lớn nh�
         d_1=discriminant_score(i,priori_prob[0],a[0],mean[0])
         d_2=discriminant_score(i,priori_prob[1],a[1],mean[1])
         d_3=discriminant_score(i,priori_prob[2],a[2],mean[2])
+
         #Lựa discriminant score lớn nhất, x sẽ thuộc lớp có  discriminant score lớn nhất này
         if d_1>d_2 and d_1>d_3:
             class_id.append("apple")
@@ -87,16 +89,36 @@ print("accuracy score test: ",accuracy_score_test*100)
 plt.plot(X_1[:,0], X_1[:,1],"o", color="red",label="Apple")
 plt.plot(X_2[:,0], X_2[:,1], "o",color="orange",label="Orange")
 plt.plot(X_3[:,0], X_3[:,1], "o",color="yellow",label="Lemon")
+plt.title("Dataset")
 plt.legend()
 plt.show()
 
-# Plot
+# Plot data test
 class_1=X_test[y_test=="apple"]
 class_2=X_test[y_test=="orange"]
 class_3=X_test[y_test=="lemon"]
 plt.plot(class_1[:,0], class_1[:,1], "o",color="red",label="Apple")
 plt.plot(class_2[:,0], class_2[:,1], "o",color="orange",label="Orange")
 plt.plot(class_3[:,0], class_3[:,1], "o",color="yellow",label="Lemon")
-plt.title("Fruit")
+plt.title("Data test")
+plt.legend()
+plt.show()
+
+# Plot data test discriminant_score compare
+d_apple=[]
+d_orange=[]
+d_lemon=[]
+for i in X_test:
+    # tính d (discriminant score)
+    d_1 = discriminant_score(i, priori_prob[0], a[0], mean[0])
+    d_2 = discriminant_score(i, priori_prob[1], a[1], mean[1])
+    d_3 = discriminant_score(i, priori_prob[2], a[2], mean[2])
+    d_apple.append(d_1)
+    d_orange.append(d_2)
+    d_lemon.append(d_3)
+plt.plot(d_apple, "o",color="red",label="Apple")
+plt.plot(d_orange, "o",color="orange",label="Orange")
+plt.plot(d_lemon, "o",color="yellow",label="Lemon")
+plt.title("Fruit discriminant_score compare")
 plt.legend()
 plt.show()
