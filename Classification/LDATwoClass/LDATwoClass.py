@@ -1,12 +1,11 @@
 #Những thư viên cần thiết
 import numpy as np
-import pickle
-import gzip
+
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 from sklearn.model_selection import train_test_split
 from sklearn import metrics, datasets
 import matplotlib.pyplot as plt
-from matplotlib.colors import ListedColormap
+
 # LDA theo công thức ---------------------------------------------------------
 # Dataset
 np.random.seed(22)# tạo dữ liệu random
@@ -43,8 +42,8 @@ w=clf.coef_/np.linalg.norm(clf.coef_)#vector w đã được chuẩn hóa
 Y_predict=clf.predict(X)# predict X
 accuracy_score=metrics.accuracy_score(Y_predict,y)#tính đọ chính xác của tập
 print("Theo skitlearn: ",w)
-#
-x = np.linspace(-10, 10, 1000)
+
+
 #plot data original
 plt.plot(X0[:,0],X0[:,1],"o",color='red',label='Class 0')
 plt.plot(X1[:,0],X1[:,1],"o",color='blue',label='Class 1')
@@ -52,6 +51,8 @@ plt.title("Original Data")
 plt.legend()
 plt.show()
 #plot data with LDA
+#
+x = np.linspace(-10, 10, 1000)
 plt.plot(X0[:,0],X0[:,1],"o",color='red',label='Class 0')
 plt.plot(X1[:,0],X1[:,1],"o",color='blue',label='Class 1')
 plt.plot(x,x*w[0,1]/w[0,0],label="Solution by LDA")
