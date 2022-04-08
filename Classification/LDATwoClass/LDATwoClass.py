@@ -40,9 +40,10 @@ clf=LDA()
 clf.fit(X,y)#fit tập Dataset
 w=clf.coef_/np.linalg.norm(clf.coef_)#vector w đã được chuẩn hóa
 Y_predict=clf.predict(X)# predict X
+print(Y_predict)
 accuracy_score=metrics.accuracy_score(Y_predict,y)#tính đọ chính xác của tập
 print("Theo skitlearn: ",w)
-
+print(accuracy_score)
 
 #plot data original
 plt.plot(X0[:,0],X0[:,1],"o",color='red',label='Class 0')
