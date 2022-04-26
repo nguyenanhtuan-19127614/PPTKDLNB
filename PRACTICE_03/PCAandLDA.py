@@ -9,10 +9,10 @@ iris = datasets.load_iris()
 X = iris.data
 y = iris.target
 target_names = iris.target_names
-
+#PCA
 pca = PCA(n_components=2)
 X_r = pca.fit(X).transform(X)
-
+#LDA
 lda = LinearDiscriminantAnalysis(n_components=2)
 X_r2 = lda.fit(X, y).transform(X)
 
